@@ -2,10 +2,10 @@ import os
  
 def encrypt_char(char, shift1, shift2):
     if char.islower():
-        # lowercase
+        # lowercase letters
         return chr((ord(char) - ord('a') + shift1 + shift2) % 26 + ord('a'))
     elif char.isupper():
-        # uppercase
+        # uppercase letters
         return chr((ord(char) - ord('A') + shift1 + shift2) % 26 + ord('A'))
     else:
         return char
@@ -50,6 +50,7 @@ def verify_decryption():
         print("Verification failed: Decrypted text does NOT match the original.")
  
 def main():
+    #input for encryption shifting
     shift1 = int(input("Enter shift1 value: "))
     shift2 = int(input("Enter shift2 value: "))
    
@@ -58,4 +59,5 @@ def main():
     verify_decryption()
  
 if __name__ == "__main__":
+
     main()
