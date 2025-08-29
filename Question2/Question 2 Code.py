@@ -1,13 +1,10 @@
-import pandas as pd      # pandas is used for handling and analyzing data
-import glob              # glob helps find files matching a pattern
-import os                # os is used for file and folder operations
+import pandas as pd      
+import glob              
+import os               
 
-# The folder where your CSV files are stored
 DATA_FOLDER = "temperatures"
 
-# This function loads and combines all CSV files in the folder
 def load_data():
-    # Find all CSV files in the folder
     all_files = glob.glob(os.path.join(DATA_FOLDER, "*.csv"))
     print("Found files:", all_files)  # Print the files found for debugging
     if not all_files:
@@ -127,7 +124,6 @@ def temperature_stability(df):
         for station in variable.index:
             f.write(f"Most Variable: {station}: StdDev {variable[station]:.1f}°C\n")
 
-# This is the main function that runs everything
 def main():
     df = load_data()  # Load and combine all data
     if df.empty:
@@ -141,4 +137,5 @@ def main():
 
 # This runs the main function when you run the script
 if __name__ == "__main__":
+
     main()
