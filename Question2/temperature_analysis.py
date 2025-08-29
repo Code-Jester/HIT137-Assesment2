@@ -108,7 +108,7 @@ def temperature_stability(df):
 def main():
     df = load_data()
     if df.empty:
-        print("No data loaded. Exiting.")
+        print("No data loaded.")
         return
     df = df.dropna(subset=["Temperature"])
     seasonal_average(df)
@@ -117,4 +117,5 @@ def main():
     print("Done! Results saved to text files.")
  
 if __name__ == "__main__":
+
     main()
