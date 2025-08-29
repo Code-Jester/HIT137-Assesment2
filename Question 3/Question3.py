@@ -28,7 +28,9 @@ def fractal_polygon(sides, length, depth, inward=True):
 
     window.mainloop()
 
+#Input for users
 sides = int(input("Enter the number of sides: "))
 length = int(input("Enter the side length: "))
 depth = int(input("Enter the recursion depth: "))
 fractal_polygon(sides, length, depth,)
+
